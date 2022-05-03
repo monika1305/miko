@@ -15,8 +15,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static const String _title = 'Flutter Code Sample';
-
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
@@ -40,56 +38,6 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-
-  bool _showAppbar = true; //this is to show app bar
-  ScrollController _scrollBottomBarController = new ScrollController(); // set controller on scrolling
-  bool isScrollingDown = false;
-  bool _show = true;
-  double bottomBarHeight = 75; // set bottom bar height
-  double _bottomBarOffset = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    myScroll();
-  }
-
-  @override
-  void dispose() {
-    _scrollBottomBarController.removeListener(() {});
-    super.dispose();
-  }
-  void showBottomBar() {
-    setState(() {
-      _show = true;
-    });
-  }
-
-  void hideBottomBar() {
-    setState(() {
-      _show = false;
-    });
-  }
-  void myScroll() async {
-    _scrollBottomBarController.addListener(() {
-      if (_scrollBottomBarController.position.userScrollDirection ==
-          ScrollDirection.reverse) {
-        if (!isScrollingDown) {
-          isScrollingDown = true;
-          _showAppbar = false;
-          hideBottomBar();
-        }
-      }
-      if (_scrollBottomBarController.position.userScrollDirection ==
-          ScrollDirection.forward) {
-        if (isScrollingDown) {
-          isScrollingDown = false;
-          _showAppbar = true;
-          showBottomBar();
-        }
-      }
-    });
-  }
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -120,8 +68,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _showAppbar
-          ? AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 2,
         centerTitle: true,
@@ -144,54 +91,12 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         SizedBox(width: 10,),
 
       ],
-      )
-            : PreferredSize(
-        preferredSize: const Size(0.0, 0.0),
-        child: Container(),
-    ),
-
-      bottomNavigationBar: Container(
-        height: bottomBarHeight,
-        width: MediaQuery.of(context).size.width,
-        child: _show
-            ?BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.redAccent,
-          unselectedItemColor: Colors.black26.withOpacity(.60),
-          selectedFontSize: 10,
-          unselectedFontSize: 8,
-          onTap: _onItemTapped,
-          currentIndex: _selectedIndex, // this will be set when a new tab is tapped
-          items: const [
-            BottomNavigationBarItem(
-              label: ('Home'),
-              icon: Icon(Icons.home),
-            ),
-            BottomNavigationBarItem(
-              label: ('Mikoconnect'),
-              icon: Icon(Icons.videocam_sharp),
-            ),
-            BottomNavigationBarItem(
-              label: ('Mikomax'),
-              icon: Icon(Icons.design_services_sharp),
-            ),
-            BottomNavigationBarItem(
-              label: ('Reports'),
-              icon: Icon(Icons.show_chart),
-            ),BottomNavigationBarItem(
-              label: ('Moments'),
-              icon: Icon(Icons.image_sharp),
-            ),
-          ],
-        )
-            : Container(
-          color: Colors.white,
-          width: MediaQuery.of(context).size.width,
-        ),
       ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
 
-    /*  BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: Colors.redAccent,
@@ -221,11 +126,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             icon: Icon(Icons.image_sharp),
           ),
         ],
-      ),
-*/
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      )
+
     );
   }
 }

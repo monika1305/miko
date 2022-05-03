@@ -19,7 +19,6 @@ class _TalentSliderState extends State<TalentSlider> {
 
   @override
   Widget build(BuildContext context) {
-    const height = 100;
 
     return Scaffold(
       body: Center(
