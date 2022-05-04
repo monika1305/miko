@@ -12,8 +12,7 @@ class TalentScreen extends StatefulWidget {
 class _TalentScreenState extends State<TalentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        flex: 10,
+    return SafeArea(
         child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
 
@@ -40,10 +39,10 @@ class _TalentScreenState extends State<TalentScreen> {
           ),
             textAlign: TextAlign.left,
           ),
-          SizedBox(// otherwise the logo will be tiny
-              height: 150,
-            width: MediaQuery.of(context).size.width*10,// otherwise the logo will be tiny
-              child: TalentSlider(),
+          SizedBox(
+            height: 200,
+            width: MediaQuery.of(context).size.width*10,
+            child: TalentSlider(),
 
           ),
           // TalentSlider(),

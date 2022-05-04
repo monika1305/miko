@@ -91,8 +91,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
       ],
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      body: SafeArea(
+        child: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
 

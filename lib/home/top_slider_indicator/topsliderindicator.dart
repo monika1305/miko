@@ -45,7 +45,6 @@ class _TopSliderIndicatorState extends State<TopSliderIndicator> {
               child: Card(
                 margin: const EdgeInsets.only(
                   top: 5.0,
-                  bottom: 5.0,
                 ),
                 elevation: 6.0,
                 shadowColor: Colors.redAccent,
@@ -55,7 +54,6 @@ class _TopSliderIndicatorState extends State<TopSliderIndicator> {
                     children: <Widget>[
                       SizedBox(
                           width: MediaQuery.of(context).size.width,
-                          height: 200.0,
                           child: item //Card
                       ),
                     ],

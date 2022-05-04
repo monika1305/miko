@@ -27,7 +27,8 @@ class _HomePageState extends State<HomePage> {
             children: const [
               SizedBox(
                 child: TopSliderIndicator(),
-              ), SizedBox(
+              ),
+              SizedBox(
                 child:  TalentScreen(),
               ),
               SizedBox(height: 10,),

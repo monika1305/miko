@@ -12,8 +12,7 @@ class TidbitsScreen extends StatefulWidget {
 class _TidbitsScreenState extends State<TidbitsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        flex: 10,
+    return SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
 
@@ -39,10 +38,10 @@ class _TidbitsScreenState extends State<TidbitsScreen> {
           ),
             textAlign: TextAlign.left,
           ),
-          SizedBox(// otherwise the logo will be tiny
-              height: 150,
-            width: MediaQuery.of(context).size.width*2,// otherwise the logo will be tiny
-              child: const TidbitsSlider(),
+          SizedBox(
+            height: 200,
+            width: MediaQuery.of(context).size.width*10,
+            child: const TidbitsSlider(),
 
           ),
           // TidbitsSlider(),

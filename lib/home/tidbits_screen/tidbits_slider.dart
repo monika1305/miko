@@ -40,7 +40,7 @@ class _TidbitsSliderState extends State<TidbitsSlider> {
             elevation: 6.0,
             shadowColor: Colors.redAccent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(20.0),
             ),
             child: ClipRRect(
 
@@ -48,8 +48,8 @@ class _TidbitsSliderState extends State<TidbitsSlider> {
                 children: <Widget>[
                   Image.network(
                     item,
-                    fit: BoxFit.fill,
-                    width: double.infinity,
+                    fit: BoxFit.contain,
+                    width: double.maxFinite,
                   ),
 
                 ],

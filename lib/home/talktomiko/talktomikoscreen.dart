@@ -11,8 +11,7 @@ class TalktoMikoScreen extends StatefulWidget {
 class _TalktoMikoScreenState extends State<TalktoMikoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-        flex: 5,
+    return SafeArea(
         child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
 
@@ -38,10 +37,10 @@ class _TalktoMikoScreenState extends State<TalktoMikoScreen> {
           ),
             textAlign: TextAlign.left,
           ),
-          SizedBox(// otherwise the logo will be tiny
-              height: 150,
-            width: MediaQuery.of(context).size.width*30,// otherwise the logo will be tiny
-              child: const TalktoMikoSlider(),
+          SizedBox(
+            height: 150,
+            width: MediaQuery.of(context).size.width*2,
+            child: const TalktoMikoSlider(),
 
           ),
           // TalktoMikoSlider(),

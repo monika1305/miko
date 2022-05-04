@@ -19,6 +19,8 @@ class _TalentSliderState extends State<TalentSlider> {
 
 
 
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -38,18 +40,18 @@ class _TalentSliderState extends State<TalentSlider> {
             elevation: 6.0,
             shadowColor: Colors.redAccent,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(20.0),
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.all(
-                Radius.circular(30.0),
+                Radius.circular(20.0),
               ),
               child: Stack(
                 children: <Widget>[
                   Image.network(
                     item,
-                    fit: BoxFit.fill,
-                    width: double.infinity,
+                    fit: BoxFit.contain,
+                    width: double.maxFinite,
                   ),
 
                 ],
