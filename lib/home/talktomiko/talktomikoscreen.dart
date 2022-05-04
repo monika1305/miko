@@ -41,7 +41,7 @@ class _TalktoMikoScreenState extends State<TalktoMikoScreen> {
           SizedBox(// otherwise the logo will be tiny
               height: 150,
             width: MediaQuery.of(context).size.width*30,// otherwise the logo will be tiny
-              child: TalktoMikoSlider(),
+              child: const TalktoMikoSlider(),
 
           ),
           // TalktoMikoSlider(),

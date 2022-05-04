@@ -53,7 +53,8 @@ class _TalktoMikoSliderState extends State<TalktoMikoSlider> {
     () {
     _currentIndex = index;
     },
-    );}
+    );
+          }
       ),
       items: colorsList
           .map(

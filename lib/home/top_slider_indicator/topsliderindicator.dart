@@ -33,6 +33,7 @@ class _TopSliderIndicatorState extends State<TopSliderIndicator> {
               setState(
                     () {
                   _currentIndex = index;
+
                 },
               );
             },

@@ -17,6 +17,9 @@ class _TidbitsSliderState extends State<TidbitsSlider> {
     'https://rukminim2.flixcart.com/image/832/832/jmnrtzk0-1/smart-assistant/s/m/9/miko-companion-robot-mmc2226-emotix-original-imaf8dvtdvgy7gzj.jpeg',
     ];
 
+
+
+
   @override
   Widget build(BuildContext context) {
     const height = 100;

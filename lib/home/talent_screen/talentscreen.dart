@@ -28,6 +28,7 @@ class _TalentScreenState extends State<TalentScreen> {
                     fontSize: 14,
 
                 ),
+
                 textAlign: TextAlign.left,
               ),
           const SizedBox(height: 10,),

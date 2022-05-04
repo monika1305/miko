@@ -9,13 +9,10 @@ class FrameThree extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       color: Colors.green[800],
       child: Row(
-
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const <Widget>[
           Expanded(
-
-
     child: Align(
     alignment: Alignment.bottomCenter,
     child:  Text(

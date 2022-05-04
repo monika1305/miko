@@ -20,7 +20,7 @@ class _TidbitsScreenState extends State<TidbitsScreen> {
           child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children:  [
-          Text(
+          const Text(
                 'Tidbitss',
                 style: TextStyle(
                     color: Colors.redAccent,
@@ -30,8 +30,8 @@ class _TidbitsScreenState extends State<TidbitsScreen> {
                 ),
                 textAlign: TextAlign.left,
               ),
-          SizedBox(height: 10,),
-          Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor diam, lobortis varius felis finibus non.',
+          const SizedBox(height: 10,),
+          const Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta porttitor diam, lobortis varius felis finibus non.',
             style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.normal,
