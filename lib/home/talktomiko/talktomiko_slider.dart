@@ -44,7 +44,7 @@ class _TalktoMikoSliderState extends State<TalktoMikoSlider> {
       options: CarouselOptions(
 
           aspectRatio:2.0,
-           viewportFraction: 0.4,
+           viewportFraction: 0.2,
            disableCenter: true,
            enableInfiniteScroll: false,
            autoPlay: false,
@@ -59,7 +59,7 @@ class _TalktoMikoSliderState extends State<TalktoMikoSlider> {
       items: colorsList
           .map(
             (item) => Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: const EdgeInsets.all(5.0),
           child:  Container(
             width: 50,
             height: 50,
@@ -68,21 +68,23 @@ class _TalktoMikoSliderState extends State<TalktoMikoSlider> {
               shape: BoxShape.circle,
             ),
             child: Padding(
-              padding: EdgeInsets.all(2), // border width
+              padding: EdgeInsets.all(5), // border width
               child: Container( // or ClipRRect if you need to clip the content
                 decoration:  BoxDecoration(
                   shape: BoxShape.circle,
                   color: item, // inner circle color
                 ),
-                child: Container(
-                  child: Text(
+
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child:  Text(
                     '${titles[_currentIndex]}',
                     style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      backgroundColor: Colors.black45,
-                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black45,
                     ),
+
                   ),
                 ), // inner content
               ),
